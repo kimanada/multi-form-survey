@@ -20,7 +20,7 @@ export default class Section implements SectionData {
     description: '',
     questions: [new Question()],
   }) {
-    makeAutoObservable(this);
+    makeAutoObservable(this, {}, { autoBind: true });
 
     this.id = data.id;
     this.title = data.title;
