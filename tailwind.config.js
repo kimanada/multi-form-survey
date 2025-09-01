@@ -10,6 +10,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      sm: '820px' //820px 이상일 때 적용 
+    },
     extend: {
       spacing: {
         ...px0_200,
