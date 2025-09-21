@@ -1,13 +1,5 @@
 import { makeAutoObservable } from "mobx";
-import { QuestionType } from "../types/app";
-
-type QuestionData = {
-  id: number;
-  title: string;
-  type: QuestionType;
-  required: boolean;
-  options?: string[];
-}
+import { QuestionData, QuestionType } from "../types/app";
 
 export default class Question implements QuestionData {
   id: number;
@@ -52,5 +44,12 @@ export default class Question implements QuestionData {
     this.options = options;
   }
 
-  //TODO : 하나의 옵션을 변경할 수 있도록 하는 메소드 추가
+  setOption(index: number, option: string) {
+    if (!this.options) {
+      return;
+    }
+
+    this.options[index] = option;
+  }
+
 }
